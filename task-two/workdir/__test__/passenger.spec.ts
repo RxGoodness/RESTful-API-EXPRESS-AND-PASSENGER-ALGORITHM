@@ -86,6 +86,34 @@ describe("test for shuffle", () => {
     expect(expected.reservation.length).toBe(10);
     expect(expected.count).toBe(4);
   });
+  it("third multiple shuffle works with enough shuffle", () => {
+    let passengers = 210;
+    let shuffle = 4;
+    const expected = taskOne(passengers, shuffle);
+    expect(expected.boarded.length).toBe(10);
+    expect(expected.reservation.length).toBe(0);
+    expect(expected.count).toBe(5);
+  });
+
+
+
+  it("fifth multiple shuffle works ", () => {
+    let passengers = 310;
+    let shuffle = 6;
+    const expected = taskOne(passengers, shuffle);
+    expect(expected.boarded.length).toBe(10);
+    expect(expected.reservation.length).toBe(0);
+    expect(expected.count).toBe(7);
+  });
+  it("fifth multiple shuffle works with reservation ", () => {
+    let passengers = 315;
+    let shuffle = 6;
+    const expected = taskOne(passengers, shuffle);
+    expect(expected.boarded.length).toBe(15);
+    expect(expected.reservation.length).toBe(0);
+    expect(expected.count).toBe(7);
+  });
+
 });
 
 describe("test for boarded value", () => {
